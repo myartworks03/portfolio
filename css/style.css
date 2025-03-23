@@ -1,0 +1,848 @@
+body {
+  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: .8px;
+  color: #333;
+}
+
+a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: #42B4E7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+/*--------------------------------
+ レイアウト
+---------------------------------*/
+.section {
+  padding: 80px 0;
+}
+
+/* セクション色分け */
+section:nth-child(even) {
+  background-color: #EDF1F2;
+}
+
+section:nth-child(odd) {
+  background-image: url(../img/bg-sozai.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+}
+
+/* インナー設定 */
+.inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/*--------------------------------
+ 見出し
+---------------------------------*/
+h1.header-logo {
+  display: inline-block;
+  align-items: center;
+}
+
+h2.title {
+  font-size: 34px;
+  font-weight: normal;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  padding-bottom: 0.5em;
+  letter-spacing: .05em;
+  color: #333;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+h2.title::before {
+  position: absolute;;
+  content: '';
+  top: 100%;
+  width: 10%;/*線の長さ*/
+  height: 5px;/*線の太さ*/
+  border-radius: 2px;/*線の角を丸くする*/
+  background-color: #42B4E7;/*線の色*/
+}
+
+.lead {
+  margin-bottom: 30px;
+}
+
+h3,
+.p-h3 {
+  font-size: 21px;
+  position: relative;
+  padding: .3em 0;
+}
+
+.p-h3 {
+  text-align: center;
+}
+
+/* h3::before,
+h3::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+h3::before{
+  top: 2px;
+  left: -18px;
+  width: 12px;
+  height: 12px;
+  background-color: #42B4E7;
+  z-index: -2;
+}
+h3::after{
+  top: 3px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #EDF1F2;
+  opacity: .8;
+  z-index: -1;
+} */
+
+/* 見出し　span */
+.mds {
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+}
+
+.mds2 {
+  font-size: 14px;
+  display: block;
+  font-weight: bold;
+}
+
+
+/*--------------------------------
+ヘッダー
+---------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-right: 20px;
+  letter-spacing: .05em;
+}
+
+.header-logo a {
+  color: #2C3E50;
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.header-nav-item a {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 0;
+  letter-spacing: .05em;
+  color: #333;
+  position: relative;
+}
+
+.header-nav-item a::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  bottom: -10px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s;
+}
+
+a:hover::after {
+  transform: scale(1, 1);
+  transform-origin: right top;
+}
+
+/*--------------------------------
+ スプリットスクリーン
+---------------------------------*/
+.bill {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bill-body {
+  width: 50%;
+  padding-right: auto;
+  padding-left: auto;
+}
+
+.bill-img {
+  width: 50%;
+  height: 84vh;
+  background-image: url(../img/mv.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 縦方向に中央揃え */
+  align-items: left; /* 横方向に中央揃え */
+  position: relative;
+}
+
+.bill-img div {
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(44, 62, 80, 0.7);
+  margin: 10px 0; /* 各帯の間隔 */
+  padding: 10px 20px; /* 帯内の余白 */
+  position: relative;
+  font-family: Noto Sans JP；
+}
+
+.bill-img div:nth-child(1) {
+  margin: 10px 0; /* 各帯の間隔 */
+  padding: 10px 20px; /* 帯内の余白 */
+  width: 85%;
+  position: relative;
+}
+
+.bill-img div::before {
+  content: '\f14a';
+  font-family: 'Font Awesome 6 Free';
+  padding: 0 7px 0 0
+}
+
+.bill-img div:nth-child(2) {
+  margin: 10px 0 3em; /* 各帯の間隔 */
+  padding: 10px 20px; /* 帯内の余白 */
+  width: 65%;
+}
+
+
+
+.bill-title {
+  /* background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+}
+
+.bill-title p {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: .05em;
+  color: #2C3E50;
+  text-align: center;
+}
+
+.bill-text {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bill-text p{
+  text-align: center;
+}
+
+
+
+/*--------------------------------
+ 共通
+---------------------------------*/
+
+/* 共通ボタン */
+.n-btn {
+  background-color: #fc6621;
+  margin: 3em auto;
+  padding: 0.5em 1em;
+  border-radius: 40px;
+  width: 250px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.n-btn:hover {
+  transform: scale(1.1,1.1);
+}
+
+.n-btn a {
+  color: #fff;
+}
+
+/* 作品詳細ボタン 2カラム*/
+.demo-link {
+  display: flex;  /* 横並びにする */
+  gap: 5em;  /* ボタン間の間隔 */
+  justify-content: center;  /* 中央揃え */
+  flex-wrap: wrap; /* ボタンが多くなると自動で折り返し */
+}
+
+.demo-link > .d-btn {
+  text-align: center;  /* テキストを中央揃え */
+}
+
+/* PC版（ボタン幅を制限） */
+.demo-link > .d-btn a {
+  display: inline-block;
+  background-color: #fc6621;
+  padding: 0.5em 1em;
+  border-radius: 40px;
+  color: #fff;
+  text-align: center;
+  width: auto;
+  max-width: 250px; /* 最大幅を250pxに設定 */
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  margin-bottom: 3em;
+}
+
+/* 2カラム　共通設定 */
+.skill-list,
+.about-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -50px;
+}
+
+.skill-item,
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 50px;
+}
+
+.skill-body,
+.about-body {
+  flex: 1;
+}
+
+
+/*--------------------------------
+ Works
+---------------------------------*/
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -40px;
+}
+
+.works-item {
+  position: relative; /* 疑似要素を正しく配置するため */
+  width: 31.74603%;
+  margin-right: 1.58730%;
+  margin-bottom: 40px;
+  color: #333;
+  border: 1px solid #ddd; /* 枠線を追加 */
+  padding-bottom: 15px; /* 枠と内容の間に余白を追加 */
+  box-sizing: border-box; /* パディングを含めたサイズを維持 */
+  background-color: #fff; /* 背景色を設定 */
+  transition: transform 0.3s ease; /* ホバー効果用 */
+}
+
+.works-item::before {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  /* ラベルのデザイン */
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  z-index: 0;
+}
+
+.works-item.category-web::before {
+  content: 'Web Design'; /* Webカテゴリー用ラベル */
+  background-color: #2C3E50;
+}
+
+.works-item.category-other::before {
+  content: 'Other Design'; 
+  background-color: #42B4E7;
+}
+
+
+.works-item:hover {
+  transform: scale(1.05); /* ホバー時の拡大 */
+}
+
+.works-item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.works-item div p {
+  margin-left: 10px;
+}
+
+.works-img img {
+  border: 1px solid #e6e6e6;
+}
+
+.works-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.works-info {
+  font-size: 10px;
+}
+
+/*--------------------------------
+ Skill
+---------------------------------*/
+
+/* スキル表タブ設定 */
+/* タブボタンのスタイル */
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2em;
+}
+.tab-button {
+  background-color: #fff;
+  border: 1px solid #fc6621;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em 1em;
+  width: 250px;
+  color: #fc6621;
+  text-align: center;
+}
+
+.tab-button.active {
+  background-color: #fc6621;
+  color: #fff;
+}
+
+/* タブコンテンツのスタイル */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+  padding: 2em;
+}
+
+/* スキル一覧の設定 */
+.skill-img {
+  width: 60px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.skill-ex {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.skill-name {
+  margin-bottom: 3px;
+}
+
+.about-body p {
+  margin-bottom: 1em;
+}
+
+.about-br {
+  margin-top: 3em;
+}
+
+
+/*--------------------------------
+ Works
+---------------------------------*/
+
+.about-item {
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+/*--------------------------------
+ Contact
+---------------------------------*/
+
+.contact-txtbox {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+  padding: 2em;
+}
+
+.contact-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-text {
+  margin-top: 10px;
+}
+
+/*--------------------------------
+ ページトップ
+---------------------------------*/
+.page-top {
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #EDF1F2;
+}
+
+.page-top .material-icons-outlined {
+  vertical-align: bottom;
+}
+
+/*--------------------------------
+ フッター
+---------------------------------*/
+.footer {
+  padding: 30px;
+  background-color: #2C3E50;
+}
+
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+.footer-nav-item a {
+  color: #fff;
+}
+
+.footer-nav-item a:hover {
+  opacity: .5;
+}
+
+.copyright {
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+/*--------------------------------
+ 下層：Worksページ
+---------------------------------*/
+.article {
+  padding: 80px 0;
+}
+
+.article-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.article-img {
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.article-img img {
+  border: 1px  solid #2C3E50;
+}
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-info-title {
+  font-size: 15px;
+}
+
+.article-body img {
+  margin-bottom: 30px;
+}
+
+.article-body p {
+  margin-bottom: 30px;
+}
+
+.home-link {
+  text-align: center;
+}
+
+.works-c {
+  margin-bottom: 3em;
+  border-bottom: 1px solid #2C3E50;
+}
+
+
+/*media PCsize 1024
+----------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+  .works .inner,
+  .skill .inner,
+  .about .inner,
+  .contact .inner {
+    padding: 0 9em;
+  }
+
+}
+
+/*media SPsize 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  /* 見出し */
+  h2.title {
+    font-size: 26px;
+    margin-bottom: 2em;
+  }
+
+  /* レイアウト */
+  .section {
+    padding: 60px 0;
+  }
+
+  .inner {
+    padding: 0 20px;
+  }
+
+  /* ヘッダー */
+  .header-inner {
+    padding: 20px;
+  }
+
+  .header-logo {
+    font-size: 16px;
+  }
+
+  .header-nav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .header-nav-item a {
+    font-size: 11px;
+  }
+
+  /* スプリットスクリーン */
+  .bill {
+    flex-direction: column-reverse;
+  }
+
+  .bill-body {
+    width: 100%;
+    padding-right: 3%;
+    padding-left: 8%;
+  }
+
+  /* 右側ビルボ設定 */
+  .bill-img {
+    width: 100%;
+    height: 53vh;
+    margin-bottom: 20px;
+    background-image: url(../img/sp_mv.jpg);
+  }
+
+  .bill-img div {
+    font-size: 16px;
+  }
+  
+  .bill-img div:nth-child(1) {
+    width: 97%;
+  }
+    
+  .bill-img div:nth-child(2) {
+    width: 73%;
+  }
+
+  /* ビルボタイトル */
+  .bill-title p {
+    font-size: 32px;
+    margin: 1em auto;
+  }
+
+  .bill-text {
+    width: 95%;
+  }
+
+  .bill-text p{
+    text-align: inherit;
+  }
+  
+
+
+  /* Works */
+  .works-name {
+    font-size: 10px;
+  }
+
+  .works-list {
+    justify-content: space-between;
+  }
+
+  .works-item {
+    flex: 0 0 48%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  /* 共通　２カラム　Skill&About */
+  .skill-list,
+  .about-list {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .skill-item,
+  .about-item {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .skill-item:last-child,
+  .about-item:last-child {
+    margin-bottom: 0;
+  }
+
+/* Skill */
+/* スキル表タブ設定 */
+/* タブボタンのスタイル */
+
+.tabs {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4em;
+}
+.tab-button {
+  display: block;
+  margin-bottom: 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* about */
+.about-br {
+  margin-top: 35px;
+}
+
+  /* フッター */
+  .footer {
+    padding: 20px;
+  }
+
+  .footer-nav-list {
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  /* 作品詳細ボタン 2カラム*/
+  .demo-link {
+    flex-direction: column; /* ボタンを縦並びに */
+    align-items: center; /* 中央揃え */
+    gap: 0;
+  }
+
+  .demo-link > .d-btn {
+    width: 100%; /* 幅を100%にする */
+    margin: 0; /* ボタン間に間隔を追加 */
+  }
+
+  .demo-link > .d-btn a {
+    padding: 0.8em 1em; /* 高さを調整 */
+    width: auto; /* 幅をautoに戻す */
+    max-width: none; /* 最大幅の制限を解除 */
+  }
+
+
+}
